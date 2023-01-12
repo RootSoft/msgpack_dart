@@ -6,18 +6,20 @@ abstract class ExtDecoder {
 
 class Deserializer {
   final ExtDecoder? _extDecoder;
-  final codec = Utf8Codec();
+  final Encoding _codec;
   final Uint8List _list;
   final ByteData _data;
   int _offset = 0;
 
   Deserializer(
     Uint8List list, {
+    Encoding? codec,
     ExtDecoder? extDecoder,
     this.copyBinaryData = false,
   })  : _list = list,
         _data = ByteData.view(list.buffer, list.offsetInBytes),
-        _extDecoder = extDecoder;
+        _extDecoder = extDecoder,
+        _codec = codec ?? Utf8Codec();
 
   /// If false, decoded binary data buffers will reference underlying input
   /// buffer and thus may change when the content of input buffer changes.
@@ -176,7 +178,7 @@ class Deserializer {
     final len = list.length;
     for (int i = 0; i < len; ++i) {
       if (list[i] > 127) {
-        return codec.decode(list);
+        return _codec.decode(list);
       }
     }
     return String.fromCharCodes(list);

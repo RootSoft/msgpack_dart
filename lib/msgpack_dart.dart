@@ -19,11 +19,13 @@ Uint8List serialize(
 
 dynamic deserialize(
   Uint8List list, {
+  Encoding? codec,
   ExtDecoder? extDecoder,
   bool copyBinaryData = false,
 }) {
   final d = Deserializer(
     list,
+    codec: codec,
     extDecoder: extDecoder,
     copyBinaryData: copyBinaryData,
   );
