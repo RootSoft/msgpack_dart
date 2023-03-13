@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import "package:msgpack_dart/msgpack_dart.dart";
+import "package:algorand_msgpack/algorand_msgpack.dart";
 import 'package:test/test.dart';
 
 //

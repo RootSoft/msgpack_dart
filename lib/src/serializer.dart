@@ -1,4 +1,4 @@
-part of msgpack_dart;
+part of algorand_msgpack;
 
 abstract class ExtEncoder {
   // Return null if object can't be encoded

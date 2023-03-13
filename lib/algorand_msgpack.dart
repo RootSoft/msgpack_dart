@@ -1,4 +1,4 @@
-library msgpack_dart;
+library algorand_msgpack;
 
 import 'dart:convert';
 import 'dart:typed_data';

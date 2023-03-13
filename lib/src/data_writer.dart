@@ -1,4 +1,4 @@
-part of msgpack_dart;
+part of algorand_msgpack;
 
 final int _kScratchSizeInitial = 64;
 final int _kScratchSizeRegular = 1024;

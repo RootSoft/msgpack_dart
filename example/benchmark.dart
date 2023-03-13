@@ -1,7 +1,7 @@
 import "dart:convert";
 import "dart:io";
 
-import "package:msgpack_dart/msgpack_dart.dart" as m2;
+import "package:algorand_msgpack/algorand_msgpack.dart" as m2;
 
 const int TIMES = 10000;
 
