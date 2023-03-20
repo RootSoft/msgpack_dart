@@ -3,6 +3,8 @@ library algorand_msgpack;
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:algorand_msgpack/src/bigint_encoder.dart';
+
 part 'src/common.dart';
 part 'src/data_writer.dart';
 part 'src/deserializer.dart';

@@ -411,8 +411,7 @@ void unpackUint64() {
   Uint8List data =
       Uint8List.fromList([207, 127, 255, 255, 255, 255, 255, 255, 255]);
   var value = deserialize(data);
-  expect(value, isInt);
-  expect(value, equals(9223372036854775807));
+  expect(value, equals(BigInt.from(9223372036854775807)));
 }
 
 void unpackInt8() {

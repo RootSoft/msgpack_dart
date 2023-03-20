@@ -142,9 +142,9 @@ class Deserializer {
     return res;
   }
 
-  int _readUInt64() {
-    final res = _data.getUint64(_offset);
-    _offset += 8;
+  BigInt _readUInt64() {
+    final result = _readBuffer(8);
+    final res = BigIntEncoder.decodeUint64(result);
     return res;
   }
 

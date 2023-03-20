@@ -36,6 +36,7 @@ class Serializer {
     if (d is String) return _writeString(d);
     if (d is Uint8List) return _writeBinary(d);
     if (d is Iterable) return _writeIterable(d);
+    if (d is BigInt) return _writeUint64(d);
     if (d is ByteData)
       return _writeBinary(
           d.buffer.asUint8List(d.offsetInBytes, d.lengthInBytes));
@@ -84,6 +85,16 @@ class Serializer {
       this._writer.writeUint8(0xcf);
       this._writer.writeUint64(n);
     }
+  }
+
+  void _writeUint64(BigInt n) {
+    if (n <= BigInt.from(0xFFFFFFFF)) {
+      _writePositiveInt(n.toInt());
+      return;
+    }
+
+    this._writer.writeUint8(0xcf);
+    this._writer.writeBytes(BigIntEncoder.encodeUint64(n));
   }
 
   void _writeFloat(Float n) {
