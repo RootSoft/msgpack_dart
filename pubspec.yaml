@@ -1,6 +1,6 @@
 name: algorand_msgpack
 description: Unofficial community SDK to interact with the Algorand network, for Dart & Flutter
-version: 1.0.0
+version: 1.0.1
 homepage: https://www.algorand.com
 repository: https://github.com/RootSoft/msgpack_dart.git
 issue_tracker: https://github.com/RootSoft/msgpack_dart.git/issues

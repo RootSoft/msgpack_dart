@@ -1,3 +1,7 @@
+## [1.0.1] - 2023-03-20
+
+- Supported for Uint64 encoding (BigInt)
+
 ## [1.0.0] - 2021-03-11
 
 -   Migrated to null safety (thanks RootSoft)
